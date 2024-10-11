@@ -13,25 +13,25 @@ fi
 # 启动 Docker 容器的函数
 start_containers() {
   echo -e "${GREEN}启动 MongoDB 容器...${NC}"
-  docker-compose -f docker-compose.yaml up -d
+  docker compose -f docker-compose.yaml up -d
 }
 
 # 停止 Docker 容器的函数
 stop_containers() {
   echo -e "${GREEN}停止 MongoDB 容器...${NC}"
-  docker-compose down
+  docker compose down
 }
 
 # 查看日志的函数
 view_logs() {
   echo -e "${GREEN}显示 MongoDB 容器日志...${NC}"
-  docker-compose logs -f
+  docker compose logs -f
 }
 
 # 检查容器状态的函数
 check_status() {
   echo -e "${GREEN}查看 MongoDB 容器状态...${NC}"
-  docker-compose ps
+  docker compose ps
 }
 
 # 重启容器的函数
@@ -44,7 +44,7 @@ restart_containers() {
 rebuild_containers() {
   stop_containers
   echo -e "${GREEN}重建 MongoDB 容器...${NC}"
-  docker-compose up -d --force-recreate
+  docker compose up -d --force-recreate
 }
 
 
